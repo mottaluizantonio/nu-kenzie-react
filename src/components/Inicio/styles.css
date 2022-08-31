@@ -1,0 +1,12 @@
+.gray-button {
+  width: auto;
+  height: 40px;
+  color: #868e96;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}
+.gray-button:hover {
+  color: #e9ecef;
+  background-color: #868e96;
+  border-color: #868e96;
+}

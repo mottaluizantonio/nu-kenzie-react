@@ -1,0 +1,45 @@
+#main-div-home {
+  background-color: #212529;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-principal {
+  display: flex;
+  flex-wrap: wrap;
+  width: 292px;
+  margin-right: 50px;
+}
+
+#h1-home {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 48px;
+  color: #ffffff;
+}
+
+#span-home {
+  font-size: 16px;
+  line-height: 26px;
+  color: #ffffff;
+  margin-right: 100px;
+}
+
+#iniciar {
+  margin-top: 30px;
+  margin-left: 0;
+  width: 245px;
+  height: 52px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #home-secundaria {
+    display: none;
+  }
+}
+@media only screen and (max-width: 425px) {
+}

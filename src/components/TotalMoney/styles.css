@@ -1,0 +1,21 @@
+.total-money-show {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #e34981;
+  color: #fff;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 700;
+  font-style: normal;
+  border-radius: 4px;
+  height: 65px;
+}
+
+.total-money-show:hover {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.total-money-hide {
+  display: none;
+}

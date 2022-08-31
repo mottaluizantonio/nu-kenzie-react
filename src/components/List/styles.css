@@ -1,0 +1,27 @@
+#cards-section {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: 10px 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  width: auto;
+  height: 40px;
+  margin-left: 16px;
+}
+
+/* #top-list {
+  display: flex;
+  margin-bottom: 24px;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+#buttons-list {
+  display: flex;
+}

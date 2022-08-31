@@ -1,34 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.css";
+import { useState } from "react";
+import Form from "./components/Form";
+import List from "./components/List";
+import TotalMoney from "./components/TotalMoney";
+import Nukenzie from "./components/Nukenzie";
+import Inicio from "./components/Inicio";
+import HomePage from "./components/HomePage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [listTransactions, setListTransactions] = useState([]);
+  const [homeButton, setHomeButton] = useState(true);
+  const [filtredList, setFiltredList] = useState(listTransactions);
+
+  const deleteTransaction = (transToDel) => {
+    const listWhithoutItem = listTransactions.filter(
+      (item) => item !== transToDel
+    );
+    setListTransactions(listWhithoutItem);
+    setFiltredList(listWhithoutItem);
+  };
+
+  const home = () => {
+    setHomeButton(!homeButton);
+  };
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      {!homeButton ? (
+        <>
+          <header>
+            <Nukenzie />
+            <Inicio home={home} />
+          </header>
+          <main>
+            <section id="form">
+              <Form
+                listTransactions={listTransactions}
+                setListTransactions={setListTransactions}
+                setFiltredList={setFiltredList}
+              />
+              {listTransactions !== [] && (
+                <TotalMoney listTransactions={listTransactions} />
+              )}
+            </section>
+            <section id="list-transactions">
+              <List
+                listTransactions={listTransactions}
+                filtredList={filtredList}
+                setFiltredList={setFiltredList}
+                deleteTransaction={deleteTransaction}
+              />
+            </section>
+          </main>
+        </>
+      ) : (
+        <HomePage home={home} />
+      )}
+    </>
+  );
 }
 
-export default App
+export default App;
